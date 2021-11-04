@@ -62,6 +62,7 @@ in {
     nodejs
     python3
     ripgrep
+    stow
     tmux
     tree
     unstable.clojure
