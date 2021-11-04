@@ -18,11 +18,11 @@
   bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
   lol = "log --graph --decorate --pretty=oneline --abbrev-commit"
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-#[credential]
-#  helper = osxkeychain
 [pull]
   ff = only
 [core]
   excludesFile = ~/.gitignore
 [init]
-	defaultBranch = main
+  defaultBranch = main
+[credentail]
+  helper = store
