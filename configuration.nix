@@ -37,11 +37,15 @@ in {
     keyMap = "us";
   };
 
+  # $ sudo chmod 666 /var/run/docker.sock
+  # $ systemctl start docker
+  virtualisation.docker.enable = true;
+
   # Define a user account. 
   # Don't forget to set a password with ‘passwd’.
   users.users.bertha = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
   };
 
   nixpkgs.config = {
