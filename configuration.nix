@@ -74,6 +74,7 @@ in {
     unstable.docker-compose
     unstable.fzf
     unstable.neovim
+    unstable.polylith
     vim
   ];
 

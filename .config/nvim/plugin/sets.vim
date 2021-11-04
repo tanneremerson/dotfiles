@@ -12,7 +12,7 @@ set expandtab
 set smartindent
 
 set nohlsearch
-" set hidden
+set hidden
 " set nu
 set nowrap
 set noswapfile
