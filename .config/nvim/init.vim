@@ -41,7 +41,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " HARPOON!!
 Plug 'nvim-lua/plenary.nvim'
-Plug 'ThePrimeagen/harpoon'
+" Plug 'ThePrimeagen/harpoon'
 
 call plug#end()
 
