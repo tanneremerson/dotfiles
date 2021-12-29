@@ -43,6 +43,12 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-lua/plenary.nvim'
 " Plug 'ThePrimeagen/harpoon'
 
+" Javascript
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'neovim/nvim-lspconfig'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+
 call plug#end()
 
 let mapleader = " "
