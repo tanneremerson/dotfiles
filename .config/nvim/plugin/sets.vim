@@ -38,6 +38,13 @@ set shortmess+=c
 
 set colorcolumn=80
 
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:match ExtraWhitespace /\s\+\%#\@<!$/
-:autocmd BufWritePre * :%s/\s\+$//e
+set path+=**
+
+set relativenumber
+
+" Ignore files
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=**/coverage/*
+set wildignore+=**/node_modules/*
+set wildignore+=**/.git/*

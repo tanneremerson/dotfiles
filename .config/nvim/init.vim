@@ -1,19 +1,3 @@
-" hello front end masters
-set path+=**
-
-set relativenumber
-
-" Ignore files
-set wildignore+=*.pyc
-set wildignore+=*_build/*
-set wildignore+=**/coverage/*
-set wildignore+=**/node_modules/*
-set wildignore+=**/.git/*
-
-
-" curl -fLo ~/.local/share/nvim/site/autoload/plug.vim \
-" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 call plug#begin('~/.vim/plugged')
 
 " Clojure
@@ -39,10 +23,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
-" HARPOON!!
-Plug 'nvim-lua/plenary.nvim'
-" Plug 'ThePrimeagen/harpoon'
-
 " Javascript
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neovim/nvim-lspconfig'
@@ -54,11 +34,13 @@ call plug#end()
 let mapleader = " "
 let maplocalleader=","
 
+" Window navigation
 nnoremap <Leader>j <C-W><C-J>
 nnoremap <Leader>k <C-W><C-K>
 nnoremap <Leader>l <C-W><C-L>
 nnoremap <Leader>h <C-W><C-H>
 
+" slurp and barf commands
 map <Leader>ks >)
 map <Leader>kb <)
 map <Leader>kfs <(
@@ -66,3 +48,7 @@ map <Leader>kfb >(
 map <Leader>kr <LocalLeader>o
 map <Leader>km <LocalLeader>@
 
+" Show and remove Trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd BufWritePre * :%s/\s\+$//e
