@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Make sure Vim Plug is installed
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+STOW_FOLDERS=($(ls -F | grep / | sed 's/.$//'))
+
+for i in ${!STOW_FOLDERS[@]}; do 
+  # We will handle nixos links independently
+  if [ "${STOW_FOLDERS[i]}" = "nixos" ]; then
+    continue
+  fi
+
+  stow --delete ${STOW_FOLDERS[i]}
+  stow ${STOW_FOLDERS[i]}
+done
