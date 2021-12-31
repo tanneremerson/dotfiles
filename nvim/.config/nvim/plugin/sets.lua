@@ -1,6 +1,7 @@
+vim.opt.relativenumber = true
+
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.relativenumber = true
 
 vim.opt.guicursor = ""
 
@@ -15,16 +16,14 @@ vim.opt.smartindent = true
 vim.opt.hlsearch = false
 vim.opt.hidden = true
 vim.opt.wrap = false
-vim.opt.swapfile = true
+vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = "~/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.incsearch = true
 vim.opt.scrolloff = 8
 vim.opt.showmode = false
 vim.opt.ls = 0
 vim.opt.isfname:append "@-@"
-
 
 vim.opt.cmdheight = 1
 
@@ -38,8 +37,6 @@ vim.opt.shortmess:append "c"
 vim.opt.colorcolumn = { 80, 100 }
 
 vim.opt.path:append "**"
-
-vim.opt.relativenumber = true
 
 -- Ignore files
 vim.opt.wildignore:append "*.pyc"
