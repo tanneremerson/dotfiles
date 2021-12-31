@@ -1,46 +1,54 @@
-vim.opt.relativenumber = true
+local options = {
+  relativenumber = true,
 
-vim.opt.splitbelow = true
-vim.opt.splitright = true
+  splitbelow = true,
+  splitright = true,
 
-vim.opt.guicursor = ""
+  guicursor = "",
 
-vim.opt.errorbells = false
+  errorbells = false,
 
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.opt.smartindent = true
+  tabstop = 2,
+  softtabstop = 2,
+  shiftwidth = 2,
+  expandtab = true,
+  smartindent = true,
 
-vim.opt.hlsearch = false
-vim.opt.hidden = true
-vim.opt.wrap = false
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undofile = true
-vim.opt.incsearch = true
-vim.opt.scrolloff = 8
-vim.opt.showmode = false
-vim.opt.ls = 0
-vim.opt.isfname:append "@-@"
+  hlsearch = false,
+  hidden = true,
+  wrap = false,
+  swapfile = false,
+  backup = false,
+  undofile = true,
+  incsearch = true,
+  scrolloff = 8,
+  showmode = false,
+  incsearch = true,
+  ls = 0,
+  cmdheight = 1,
+  updatetime = 50,                       -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
+  colorcolumn = { 80, 100 },             -- Add indicator at 80 and 100 col
+}
 
-vim.opt.cmdheight = 1
+for k, v in pairs(options) do
+  vim.opt[k] = v
+end
 
--- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
--- delays and poor user experience.
-vim.opt.updatetime = 50
+local appendOptions = {
+  isfname = "@-@",
 
--- Don't pass messages to |ins-completion-menu|.
-vim.opt.shortmess:append "c"
+  shortmess = "c",                       -- Don't pass messages to |ins-completion-menu|.
 
-vim.opt.colorcolumn = { 80, 100 }
+  path = "**",
 
-vim.opt.path:append "**"
+  -- Ignore files
+  wildignore = "*.pyc",
+  wildignore = "*_build/*",
+  wildignore = "**/coverage/*",
+  wildignore = "**/node_modules/*",
+  wildignore = "**/.git/*",
+}
 
--- Ignore files
-vim.opt.wildignore:append "*.pyc"
-vim.opt.wildignore:append "*_build/*"
-vim.opt.wildignore:append "**/coverage/*"
-vim.opt.wildignore:append "**/node_modules/*"
-vim.opt.wildignore:append "**/.git/*"
+for k, v in pairs(appendOptions) do
+  vim.opt[k]:append(v)
+end
