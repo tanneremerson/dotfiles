@@ -31,23 +31,6 @@ Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
 call plug#end()
 
-let mapleader = " "
-let maplocalleader=","
-
-" Window navigation
-nnoremap <Leader>j <C-W><C-J>
-nnoremap <Leader>k <C-W><C-K>
-nnoremap <Leader>l <C-W><C-L>
-nnoremap <Leader>h <C-W><C-H>
-
-" slurp and barf commands
-map <Leader>ks >)
-map <Leader>kb <)
-map <Leader>kfs <(
-map <Leader>kfb >(
-map <Leader>kr <LocalLeader>o
-map <Leader>km <LocalLeader>@
-
 " Show and remove Trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+\%#\@<!$/

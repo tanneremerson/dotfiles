@@ -34,7 +34,7 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-local appendOptions = {
+local append_options = {
   isfname = "@-@",
 
   shortmess = "c",                       -- Don't pass messages to |ins-completion-menu|.
@@ -49,6 +49,6 @@ local appendOptions = {
   wildignore = "**/.git/*",
 }
 
-for k, v in pairs(appendOptions) do
+for k, v in pairs(append_options) do
   vim.opt[k]:append(v)
 end
