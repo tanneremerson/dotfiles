@@ -34,6 +34,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 alias vim="nvim"
+alias nr="npm run"
 alias zshcfg="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias nvimcfg="(cd ~/.config/nvim/ && nvim init.vim)"
