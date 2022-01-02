@@ -2,7 +2,7 @@ local nvim_lsp = require('lspconfig')
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -33,14 +33,48 @@ local on_attach = function(client, bufnr)
 
 end
 
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'clojure_lsp', 'tsserver' }
+local servers = {
+  'pyright',
+  'clojure_lsp',
+  'tsserver' ,
+  'sumneko_lua',
+  'jsonls' ,
+}
+
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
+
+   if lsp == 'sumneko_lua' then
+     local sumneko_opts = require("sumneko_lua")
+     nvim_lsp[lsp].setup {
+       on_attach = on_attach,
+       flags = {
+         debounce_text_changes = 150,
+       },
+       settings = sumneko_opts
+     }
+
+  elseif lsp == 'jsonls' then
+    local jsonls_settings = require("jsonls")
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
+    nvim_lsp[lsp].setup {
+      on_attach = on_attach,
+      flags = {
+        debounce_text_changes = 150,
+      },
+      settings = jsonls_settings,
+      capabilities = capabilities,
     }
-  }
+
+  else -- default
+    nvim_lsp[lsp].setup {
+      on_attach = on_attach,
+      flags = {
+        debounce_text_changes = 150,
+      }
+    }
+  end
 end

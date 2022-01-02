@@ -15,6 +15,7 @@ local options = {
   smartindent = true,
 
   hlsearch = false,
+  termguicolors = true,
   hidden = true,
   wrap = false,
   swapfile = false,
