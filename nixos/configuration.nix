@@ -73,6 +73,7 @@ in {
     unstable.clojure-lsp
     unstable.docker-compose
     unstable.fzf
+    unstable.lazygit
     unstable.neovim
     unstable.polylith
     vim
