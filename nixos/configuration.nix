@@ -41,7 +41,7 @@ in {
   # $ systemctl start docker
   virtualisation.docker.enable = true;
 
-  # Define a user account. 
+  # Define a user account.
   # Don't forget to set a password with ‘passwd’.
   users.users.bertha = {
     isNormalUser = true;
@@ -59,10 +59,13 @@ in {
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
     babashka
+    cargo
+    clang
     curl
     docker
     git
     htop
+    libclang
     nodejs
     python3
     ripgrep

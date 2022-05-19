@@ -5,6 +5,7 @@ Plug 'Olical/conjure'
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-repeat'
+Plug 'eraserhd/parinfer-rust'
 
 " Neovim Tree sitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
