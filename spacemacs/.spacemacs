@@ -45,7 +45,6 @@ This function should only modify configuration layer settings."
      markdown
      multiple-cursors
      spell-checking
-     test
      syntax-checking
      treemacs
      yaml)
@@ -166,14 +165,6 @@ It should only modify the values of Spacemacs settings."
    ;; appear as (spacemacs version)@(emacs version)
    ;; (default t)
    dotspacemacs-startup-buffer-show-version t
-
-   ;; Specify the startup banner. Default value is `official', it displays
-   ;; the official spacemacs logo. An integer value is the index of text
-   ;; banner, `random' chooses a random text banner in `core/banners'
-   ;; directory. A string value must be a path to an image format supported
-   ;; by your Emacs build.
-   ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
 
    ;; Scale factor controls the scaling (size) of the startup banner. Default
    ;; value is `auto' for scaling the logo automatically to fit all buffer
@@ -393,24 +384,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-scroll-bar-while-scrolling t
 
    ;; Control line numbers activation.
-   ;; If set to `t', `relative' or `visual' then line numbers are enabled in all
-   ;; `prog-mode' and `text-mode' derivatives. If set to `relative', line
-   ;; numbers are relative. If set to `visual', line numbers are also relative,
-   ;; but only visual lines are counted. For example, folded lines will not be
-   ;; counted and wrapped lines are counted as multiple lines.
-   ;; This variable can also be set to a property list for finer control:
-   ;; '(:relative nil
-   ;;   :visual nil
-   ;;   :disabled-for-modes dired-mode
-   ;;                       doc-view-mode
-   ;;                       markdown-mode
-   ;;                       org-mode
-   ;;                       pdf-view-mode
-   ;;                       text-mode
-   ;;   :size-limit-kb 1000)
-   ;; When used in a plist, `visual' takes precedence over `relative'.
-   ;; (default nil)
-   dotspacemacs-line-numbers nil
+   ;; Options are `t', `relative' or `visual'
+   dotspacemacs-line-numbers 't
 
    ;; Code folding method. Possible values are `evil', `origami' and `vimish'.
    ;; (default 'evil)
