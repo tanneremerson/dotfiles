@@ -55,13 +55,3 @@
       homebrew_cask:
         name: "{{ brew_cask_packages }}"
         state: present
-
-      #      ==> Formulae
-      #      bdw-gc			fzf			guile			libevent		libtermkey		luv			neovim			pcre2			sqlite			unibilium
-      #      brotli			gdbm			htop			libffi			libtool			m4			nettle			pkg-config		stow			utf8proc
-      #      c-ares			gettext			icu4c			libidn2			libunistring		mpdecimal		oniguruma		readline		tmux			xz
-      #      ca-certificates		gmp			jansson			libnghttp2		libuv			msgpack			openssl@1.1		ripgrep			tree-sitter
-      #      fd			gnutls			jq			libtasn1		luajit-openresty	ncurses			p11-kit			rlwrap			unbound
-      #
-      #      ==> Casks
-      #      basictex
