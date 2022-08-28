@@ -18,6 +18,8 @@
       - readline
       - stow
       - tmux
+    brew_cask_packages:
+      - basictex
 
   pre_tasks:
   - name: Check for brew binary
@@ -49,6 +51,10 @@
       until: result is successful
       when: homebrew_check.stat.exists
 
+    - name: Installing Homebrew Cask Packages
+      homebrew_cask:
+        name: "{{ brew_cask_packages }}"
+        state: present
 
       #      ==> Formulae
       #      bdw-gc			fzf			guile			libevent		libtermkey		luv			neovim			pcre2			sqlite			unibilium
