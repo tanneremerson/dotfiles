@@ -1,0 +1,61 @@
+# Install ansible using python3 pip
+
+# Verify ansible is on your path
+
+---
+- name: Configure mac
+  hosts: all
+  vars:
+    brew_packages:
+      - clojure
+      - emacs
+      - fd
+      - fzf
+      - htop
+      - jq
+      - lazygit
+      - neovim
+      - readline
+      - stow
+      - tmux
+
+  pre_tasks:
+  - name: Check for brew binary
+    stat:
+      path: /opt/homebrew/bin/brew
+    register: homebrew_check
+  - name: Install homebrew when not present
+    shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    when: not homebrew_check.stat.exists
+
+  tasks:
+    - name: Updating Homebrew
+      homebrew:
+        update_homebrew: true
+      when: homebrew_check.stat.exists
+
+    - name: Upgrading Homebrew Packages
+      homebrew:
+        upgrade_all: true
+      register: result
+      until: result is successful
+      when: homebrew_check.stat.exists
+
+    - name: Installing Homebrew Packages
+      homebrew:
+        name: "{{ brew_packages }}"
+        state: present
+      register: result
+      until: result is successful
+      when: homebrew_check.stat.exists
+
+
+      #      ==> Formulae
+      #      bdw-gc			fzf			guile			libevent		libtermkey		luv			neovim			pcre2			sqlite			unibilium
+      #      brotli			gdbm			htop			libffi			libtool			m4			nettle			pkg-config		stow			utf8proc
+      #      c-ares			gettext			icu4c			libidn2			libunistring		mpdecimal		oniguruma		readline		tmux			xz
+      #      ca-certificates		gmp			jansson			libnghttp2		libuv			msgpack			openssl@1.1		ripgrep			tree-sitter
+      #      fd			gnutls			jq			libtasn1		luajit-openresty	ncurses			p11-kit			rlwrap			unbound
+      #
+      #      ==> Casks
+      #      basictex

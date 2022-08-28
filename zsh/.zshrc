@@ -39,5 +39,7 @@ alias zshcfg="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias nvimcfg="(cd ~/.config/nvim/ && nvim init.vim)"
 
+export PATH="/Users/tanneremerson/Library/Python/3.8/bin:$PATH"
+
 export EDITOR='nvim'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

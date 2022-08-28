@@ -6,10 +6,13 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 STOW_FOLDERS=($(ls -F | grep / | sed 's/.$//'))
 
-for i in ${!STOW_FOLDERS[@]}; do 
-  # We will handle nixos links independently
+for i in ${!STOW_FOLDERS[@]}; do
+  if [ "${STOW_FOLDERS[i]}" = "ansible-mac-bootstrap" ]; then
+    continue # No need to stow
+  fi
+
   if [ "${STOW_FOLDERS[i]}" = "nixos" ]; then
-    continue
+    continue # We will handle nixos links independently
   fi
 
   stow --delete ${STOW_FOLDERS[i]}
