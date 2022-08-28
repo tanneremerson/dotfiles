@@ -38,6 +38,7 @@ alias nr="npm run"
 alias zshcfg="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias nvimcfg="(cd ~/.config/nvim/ && nvim init.vim)"
+alias em="emacsclient -c -a 'emacs'"
 alias brup="(cd ~/dotfiles/ansible-mac-bootstrap/ && ansible-playbook main.yml --ask-become-pass)"
 
 export PATH="/Users/tanneremerson/Library/Python/3.8/bin:$PATH"
