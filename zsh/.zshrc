@@ -41,6 +41,17 @@ alias nvimcfg="(cd ~/.config/nvim/ && nvim init.vim)"
 alias em="emacsclient -c -a 'emacs'"
 alias brup="(cd ~/dotfiles/ansible-mac-bootstrap/ && ansible-playbook main.yml --ask-become-pass)"
 
+# Useful TMUX aliases
+# https://gist.githubusercontent.com/fzero/4338767/raw/0cc7db86b31b448e5cbf9c887d7b60729f86e16e/2%2520tmux-aliases.sh
+# Attaches tmux to the last session; creates a new session if none exists.
+alias t='tmux attach || tmux new-session'
+# Attaches tmux to a session (example: ta portal)
+alias ta='tmux attach -t'
+# Creates a new session
+alias tn='tmux new-session'
+# Lists all ongoing sessions
+alias tl='tmux list-sessions'
+
 export PATH="/Users/tanneremerson/Library/Python/3.8/bin:$PATH"
 
 export EDITOR='nvim'
