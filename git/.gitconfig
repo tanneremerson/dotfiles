@@ -1,8 +1,10 @@
 [user]
   #name = temerson7
-  name = tanner_emerson
   #email = temerson7@gatech.edu
-  email = tanner.p.emerson@gmail.com
+  #name = tanner_emerson
+  #email = tanner.p.emerson@gmail.com
+  name = Emerson, Tanner
+  email = tanner.emerson@viasat.com
 [alias]
   co = checkout
   s = status
