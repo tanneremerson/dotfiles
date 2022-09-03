@@ -52,7 +52,7 @@ alias tn='tmux new-session'
 # Lists all ongoing sessions
 alias tl='tmux list-sessions'
 
-export PATH="/Users/tanneremerson/Library/Python/3.8/bin:$PATH"
+export PATH="/Users/${USER}/Library/Python/3.8/bin:$PATH"
 
 export EDITOR='nvim'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
