@@ -14,6 +14,8 @@ local options = {
   expandtab = true,
   smartindent = true,
 
+  ignorecase = true,
+  smartcase = true,
   hlsearch = false,
   termguicolors = true,
   hidden = true,
@@ -24,7 +26,6 @@ local options = {
   incsearch = true,
   scrolloff = 8,
   showmode = false,
-  incsearch = true,
   ls = 0,
   cmdheight = 1,
   updatetime = 50,                       -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
@@ -33,23 +34,4 @@ local options = {
 
 for k, v in pairs(options) do
   vim.opt[k] = v
-end
-
-local append_options = {
-  isfname = "@-@",
-
-  shortmess = "c",                       -- Don't pass messages to |ins-completion-menu|.
-
-  path = "**",
-
-  -- Ignore files
-  wildignore = "*.pyc",
-  wildignore = "*_build/*",
-  wildignore = "**/coverage/*",
-  wildignore = "**/node_modules/*",
-  wildignore = "**/.git/*",
-}
-
-for k, v in pairs(append_options) do
-  vim.opt[k]:append(v)
 end

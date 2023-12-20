@@ -5,7 +5,15 @@
   #email = tanner.p.emerson@gmail.com
   name = Emerson, Tanner
   email = tanner.emerson@viasat.com
+	signingkey = 13B4664545E1BE91
+[commit]
+  template = ~/.config/git/template
+	gpgsign = false
+
 [alias]
+  e = !git commit --allow-empty
+  pair = !~/bin/git-pair
+  unpair = !~/bin/git-unpair
   co = checkout
   s = status
   ec = config --global -e
@@ -26,7 +34,18 @@
 [core]
   excludesFile = ~/.gitignore
   editor = nvim
+  pager = delta
 [init]
   defaultBranch = main
 [credentail]
   helper = store
+
+[diff]
+  tool = vimdiff
+[merge]
+  tool = vimdiff
+[difftool]
+  prompt = false
+[delta]
+  line-numbers = true
+

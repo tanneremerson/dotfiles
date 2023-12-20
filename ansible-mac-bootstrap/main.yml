@@ -7,19 +7,25 @@
   hosts: all
   vars:
     brew_packages:
+      - aws
+      - argocd
       - clojure
       - emacs
       - fd
       - fzf
       - htop
       - jq
+      - kubectl
       - lazygit
       - neovim
+      - node@14
       - readline
+      - rust
       - stow
       - tmux
     brew_cask_packages:
       - basictex
+      - turbovnc-viewer
 
   pre_tasks:
   - name: Check for brew binary
